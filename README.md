@@ -1,81 +1,172 @@
-# Titre de la page
+# Modèle Jekyll - RTD - GitHubPages
 
 **Cette page est la *« Landing Page »* de notre site**  
 
-Présentez-vous et votre projet !
+Vous pouvez complètement la modifier à votre guise à commencer par changer le titre du Site Web ci-haut.
+
+Sur cette page, toutes l'information relative au fonctionnement du Site est synthétisée. De plus, il y est présenté les fichiers et répertoires prioritaires. Ainsi, il est peut-être plus facile de commencer premièrement par catégoriser les-dits répertoires & fichiers en deux groupes distincts : 
+
+- Modifiable :
+
+  Ces répertoires et fichiers auxquels l'on réfère ici comme *modifiable* se veulent ceux dans lesquelles nous déployons le SiteWeb et ou l'administrateur est amené à effectuer les configurations nécessaires.
+
+- Secondaires:
+
+  Ces répertoires et fichiers n'ont pas à être modifier et servent davantages à la mise en page et aux déploiement global du site selon le thème. Ceux-ci ne seront donc pas aborder et expliquer.
+
+### Répertoires et fichiers *Modifiables*
+
+```
+.
+├── À propos
+│   └── README.md
+├── Librairie
+│   ├── README.md
+│   ├── Références.md
+│   └── Ressources.md
+├── Documentations
+|   ├── README.md
+│   ├── Linux
+│   │   ├── Ubuntu_20.04_LTS.md
+│   │   ├── Debian_11.md
+│   │   ├── CentOS.md
+│   │   └── README.md
+│   ├── DNS
+│   │   ├── BIND9.md
+│   │   ├── Théorie_DNS.md
+│   │   └── README.md
+│   └── SSL-TLS
+│       ├── Théorie_SSL.md
+│       ├── Implémentation.md
+│       └── README.md
+|
+├── README.md
+├── CNAME
+├── Gemfile
+├── Gemfile.lock
+├── LICENSE
+├── Makefile
+├── _config.yml
+├── jekyll-rtd-theme.gemspec
+├── package.json
+├── requirements.txt
+├── update.sh
+└── webpack.config.js
+
+```
 
 
 
+### Répertoires et fichiers *Secondaires*
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-------
-
-
-
-[^undefined]: Disclosure
-
-The documentations provided here isn’t supposed to be accurate with your personal setup. Please read carefully and take time to understand how everything works !
-
-------
-
-[^undefined]: Disclosure2
-
-MIT License
-
-Copyright (c) 2020 RunDocs & contributors
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+```
+.
+├── _includes
+│   ├── README.md
+│   ├── common
+│   │   ├── assets
+│   │   │   └── [...]
+│   │   ├── core
+│   │   │   └── [...]
+│   │   ├── rest
+│   │   │   └── [...]
+│   │   └── [...]
+│   ├── extra
+│   │   └── [...]
+│   ├── rest
+│   │   └── [...]
+│   ├── shortcodes
+│   │   └── [...]
+│   └── templates
+|   |   └── [...]
+│   └── [...]
+|
+├── _layouts
+│   ├── default.liquid
+│   └── tasks
+│       └── [...]
+├── _sass
+│   ├── _direction.scss
+│   ├── _font-face.scss
+│   ├── _layout.scss
+│   ├── _rest.scss
+│   ├── _root.scss
+│   ├── _variables.scss
+│   ├── core
+│   │   └── [...]
+│   ├── lib
+│   │   ├── @primer
+│   │   │   └── css
+│   │   │       ├── base
+│   │   │       │   └── [...]
+│   │   │       ├── breadcrumb
+│   │   │       │   └── [...]
+│   │   │       ├── buttons
+│   │   │       │   └── [...]
+│   │   │       ├── forms
+│   │   │       │   └── [...]
+│   │   │       ├── loaders
+│   │   │       │   └── [...]
+│   │   │       ├── markdown
+│   │   │       │   └── [...]
+│   │   │       ├── support
+│   │   │       │   ├── README.md
+│   │   │       │   ├── index.scss
+│   │   │       │   ├── mixins
+│   │   │       │   │   └── [...]
+│   │   │       │   └── variables
+│   │   │       │       └── [...]
+│   │   │       ├── utilities
+│   │   │       |   └── [...]
+|   |   |       └── [...]
+│   │   ├── font-awesome
+│   │   │   └── [...]
+│   │   ├── material-design-lite
+│   │   │   └── [...]
+│   │   └── rouge
+│   │       └── github.scss
+│   └── theme.scss
+├── _site
+│   ├── 404.html
+│   ├── About
+│   │   └── index.html
+│   ├── Documentations
+│   │   ├── Cisco
+│   │   │   └── index.html
+│   │   ├── DNS
+│   │   │   └── index.html
+│   │   ├── Linux
+│   │   │   └── index.html
+│   │   └── index.html
+│   ├── Library
+│   │   ├── Ressources.html
+│   │   └── index.html
+│   ├── README.md
+│   ├── assets
+│   │   ├── css
+│   │   │   ├── fonts
+│   │   │   │   └── [...]
+│   │   │   └── [...]
+│   │   ├── images
+│   │   │   └── [...]
+│   │   └── js
+│   │       └── [...]
+│   └── [...]
+├── assets
+│   ├── 404.liquid
+│   ├── css
+│   │   ├── fonts
+│   │   │   └── [...]
+│   │   └── [...]
+│   ├── images
+│   │   └── [...]
+│   ├── js
+│   │   └── [...]
+│   └── [...]
+├── jekyll-modele.gemspec
+├── package.json
+├── requirements.txt
+├── update.sh
+└── webpack.config.js
+```
 
