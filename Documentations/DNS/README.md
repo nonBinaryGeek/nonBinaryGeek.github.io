@@ -1,7 +1,8 @@
 ---
 source: page.path
+sort: 2
 ---
 
-# Windows documentations
+# DNS
 
 {% include list.liquid all=true %}

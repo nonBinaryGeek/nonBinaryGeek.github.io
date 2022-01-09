@@ -1,7 +1,8 @@
 ---
 source: page.path
+sort: 1
 ---
 
-# Linux documentations
+# Linux
 
 {% include list.liquid all=true %}
