@@ -1,0 +1,51 @@
+### FICHIER DE CONFIGURATION GENERAL ###
+
+# Titre du siteweb qui apparaitra dans google, etc.
+title: Exemple de SiteWeb
+
+# Description (Optionnelle) du site web
+description: Documentations permettant l'utilisation de Jekyll et Github
+
+#########################################################################
+###  Pour l'url, il doit correspondre a votre site heberge sur GitHub.   
+###  Afin d'utiliser un autre nom de domaine, utilisez le fichier CNAME  
+###  sous root et simplement indiquer l'alternatif.                      
+###  EXEMPLE --> echo 'docs.nonbinarygeek.ca' > CNAME                    
+
+url: https://nonbinarygeek.github.io
+
+# baseurl: (URL Distant sur lequel s'appuit le theme) NE PAS CHANGER
+remote_theme: nonBinaryGeek/nonbinarygeek.github.io
+
+# languages (Selon la ou les preferences)
+# default language : "en"
+languages: ["en", "fr"]
+
+### IL N'EST PAS NECESSAIRE DE MODIFIER QUOI QUE CE SOIT CI-BAS ###
+
+# debug:
+#   compress: true
+#   dist: false
+#   shortcodes: true
+
+readme_index:
+  with_frontmatter: true
+
+plugins:
+  - jemoji
+  - jekyll-avatar
+  - jekyll-mentions
+
+exclude:
+  - Makefile
+  - CNAME
+  - LICENSE
+  - update.sh
+  - Gemfile
+  - Gemfile.lock
+  - requirements.txt
+  - node_modules
+  - package.json
+  - package-lock.json
+  - webpack.config.js
+  - jekyll-rtd-theme.gemspec
