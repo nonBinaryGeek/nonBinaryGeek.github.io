@@ -1,10 +1,10 @@
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-modele"
-  spec.version       = "2.0.10"
+  spec.version       = "v0.2.0-alpha"
   spec.authors       = ["nonBinaryGeek"]
   spec.email         = ["admin@catpalace.ca"]
 
-  spec.summary       = "Just another documentation theme compatible with GitHub Pages"
+  spec.summary       = "Modèle basique d'un site offrant de la documentation"
   spec.license       = "MIT"
   spec.homepage      = "https://github.com/nonBinaryGeek/jekyll-modele"
 
