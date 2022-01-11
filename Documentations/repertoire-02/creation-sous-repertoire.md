@@ -22,13 +22,17 @@ Ainsi, on obtient pour résultat une organisation claire permettant de subdivise
 
 Afin de créer les dîts sous-répertoires, nous utilisons la technique des fichiers `README.md` précédemment mentionnée. Ceux-ci servent donc d'index, et se retrouve dans **CHAQUE** répertoire de notre siteweb.
 
-Les fichiers README.md ont donc besoin de 3 composantes essentielles afin d'organiser notre site:
+Les fichiers `README.md` ont donc besoin de 3 composantes essentielles afin d'organiser notre site:
 
-1. Directive `YAML Front Matter`
-2. Titre
-3. Directive `LIQUID`
+- [Directive `YAML Front Matter`](#yaml-front-matter)
+- [Titre](#titre)
+- [Directive `LIQUID`](#directive-liquid)
 
+> note: Les fichiers `README.md` peuvent être compris comme l'équivalent des fichiers `index.html` pour les connaisseurs de ce standard web. Fans les faits, les `README.md` de notre site sont convertis en `index.html` une fois que l'on active **Jekyll**.
 
+Un exemple complet se retrouve au bas de la présente page:
+
+- [Solution Complète](#solution-complète)
 
 ## YAML Front Matter
 
@@ -42,7 +46,7 @@ sort: _$
 ---
 ```
 
-Celle-ci permet d'indiquer la source et, comme pour les fichiers, l'ordre de naviguation, en remplaçcant `_$` par une valeur numérique , -e.g `1`.
+Celle-ci permet d'indiquer la source et, comme pour les fichiers, l'ordre de naviguation, en remplaçant `_$` par une valeur numérique , -e.g `1`.
 
 > note: la source `page.path` est une valeur réelle et s'inscrit dans les fichiers `README.md` de notre répertoire principale. Dans le présent siteweb, on parle du répertoire `Documentations` en adressant le répertoire principal. Vous remarquerez que l'indicatif `source: page.path` est présent dans **TOUS** les `README.md` de **TOUS** les `/répertoires` et `/sous-répertoires` présent **SOUS** `./Documentations/`.
 
@@ -60,23 +64,23 @@ Ensuite, on indique simplement le titre du répertoire, tel qu'il apparaîtra su
 
 Afin d'obtenir une mise en page appropriée, notre site est construit à l'aide de fichiers `LIQUID`. Ceux-ci offrent l'avantage de n'occuper qu'une fraction d'espace disque. Utilisant leur propre language, l'explication relative à leur fonctionnement dépasse largement le présent guide et ne sera donc pas abordé.
 
-Ce qui doit être retenu ici est donc simplement la directive suivante:
+Ce qui doit être retenu ici est donc simplement la directive suivante enveloppée par des *braces* `{		}`:
 
 ```plaintext
 % include list.liquid all=true %
 ```
 
-Cette directive doit être inscrite dans chaque `README.md` où nous souhaitons indiquer au répertoire qu'il insert une table des matières automatiquement dans la naviguation. Cette directive doit entre encadrée par des *braces* -i.e *curly brackets*: `{		}`. Lorsqu'il est inséré avec les *braces*, le langage *LIQUID* s'occupe de la transformation. Ainsi, le code ci-haut sera automatiquement transformer dans le format suivant (une fois les *braces* ajoutées):
+Cette directive doit être inscrite dans chaque `README.md` où nous souhaitons indiquer au répertoire qu'il insert une table des matières automatiquement dans la naviguation. Cette directive doit entre encadrée par des *braces* -i.e *curly brackets*: `{		}`. Lorsqu'il est inséré avec les *braces*, le langage *LIQUID* s'occupe de la transformation. Ainsi, le code ci-haut sera automatiquement transformé dans le format suivant (une fois les *braces* ajoutées):
 
 ```
 {% include list.liquid all=true %}
 ```
 
-Ainsi, textuellement parlant, la seule et unique différence entre le code `% include list.liquid all=true %` et le résultat ci-haut est l'ajout des *braces*. Si on insert le code avec les *braces* en dehors d'un *code block*, et donc directement dans le fichier *markdown*, on obtient le résultat suivant:
+Textuellement parlant, la seule et unique différence entre le code `% include list.liquid all=true %` et le résultat ci-haut est l'ajout des *braces*. Si on insert le code avec les *braces* en dehors d'un *code block*, et donc directement dans le fichier *markdown*, on obtient le résultat suivant:
 
 {% include list.liquid all=true %}
 
-On observe donc que l'utilisation de la directive -i.e du code *LIQUID* permet aussi de créer des liens entre les pages dans les fichiers `markdown` autres que les `README.md`. L'effet est toutefois différent alors que les fichiers `README.md` associés à la directive *LIQUID* permettent de définir la naviguation globale du site et que la directive *LIQUID*, une fois insérée dans les autres fichiers `markdown`, permet plutôt des liens entre les pages.  
+On observe donc que l'utilisation de la directive du code *LIQUID* permet aussi de créer des liens entre les pages dans les fichiers `markdown` autres que les `README.md`. L'effet est toutefois différent alors que les fichiers `README.md` associés à la directive *LIQUID* permettent de définir la naviguation globale du site et que la directive *LIQUID*, une fois insérée dans les autres fichiers `markdown`, permet plutôt des liens entre les pages.  
 
 
 
@@ -112,4 +116,4 @@ Documentations/
     	└── README.md		--> YAML = sort: 2
 ```
 
-Pour voir concrètement l'illustration présentée ci-haut, vous référez au présent site en étudiant le `repertoire-02`.
+Pour voir concrètement l'illustration présentée ci-haut, vous référez au présent site en étudiant les codes sources situés sous`./Documentations/repertoire-02`.

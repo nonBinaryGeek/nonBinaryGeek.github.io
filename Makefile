@@ -1,5 +1,5 @@
 DEBUG=JEKYLL_GITHUB_TOKEN=blank PAGES_API_URL=http://0.0.0.0
-ALIAS=nonbinarygeek.github.io
+ALIAS=jekyll-modele
 help:
 	@echo "HomePage: https://github.com/nonBinaryGeek/${ALIAS}\n"
 	@echo "Usage:"
