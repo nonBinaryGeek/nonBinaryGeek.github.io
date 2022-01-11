@@ -1,6 +1,6 @@
 ---
 title: Installation
-sort: 2
+sort: 1
 ---
 
 
@@ -174,9 +174,9 @@ On peut utiliser l'utilitaire `jekyll`, une fois dans le répertoire, afin de cr
 ```sh
 bundle exec jekyll serve
 
-Configuration file: /home/phil/test/jekyll-modele/_config.yml
-            Source: /home/phil/test/jekyll-modele
-       Destination: /home/phil/test/jekyll-modele/_site
+Configuration file: /home/phil/git/jekyll-modele/_config.yml
+            Source: /home/phil/git/jekyll-modele
+       Destination: /home/phil/git/jekyll-modele/_site
  Incremental build: disabled. Enable with --incremental
       Generating...
       Remote Theme: Using theme nonbinarygeek/nonbinarygeek.github.io
@@ -186,7 +186,7 @@ Configuration file: /home/phil/test/jekyll-modele/_config.yml
                     Auto-regeneration may not work on some Windows versions.
                     Please see: https://github.com/Microsoft/BashOnWindows/issues/216
                     If it does not work, please upgrade Bash on Windows or run Jekyll with --no-watch.
- Auto-regeneration: enabled for '/home/phil/test/jekyll-modele'
+ Auto-regeneration: enabled for '/home/phil/git/jekyll-modele'
     Server address: http://127.0.0.1:4000
   Server running... press ctrl-c to stop.
 ```

@@ -3,6 +3,6 @@ source: page.path
 sort: 2
 ---
 
-# DNS
+# Répertoire 01
 
 {% include list.liquid all=true %}

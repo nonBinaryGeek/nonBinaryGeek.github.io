@@ -1,8 +1,8 @@
 ---
 source: page.path
-sort: 1
+sort: 2
 ---
 
-# Linux
+# Sous Répertoire 02
 
 {% include list.liquid all=true %}
