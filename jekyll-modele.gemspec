@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-modele"
-  spec.version       = "v0.2.0-alpha"
+  spec.version       = "1.0.0"
   spec.authors       = ["nonBinaryGeek"]
   spec.email         = ["admin@catpalace.ca"]
 
