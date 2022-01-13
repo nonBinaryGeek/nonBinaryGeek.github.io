@@ -4766,7 +4766,6 @@ p.explain .minibutton {
   top: 0px;
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
   font-size: 12px;
-  content: attr(data-lang);
   padding: 0 5px;
   color: #bbc0c5;
 }
