@@ -4753,23 +4753,6 @@ p.explain .minibutton {
 .markdown-body {
   font-weight: 400;
 }
-.markdown-body .d-lang,
-.markdown-body .mermaid-wrap,
-.markdown-body div.highlighter-rouge {
-  position: relative;
-}
-.markdown-body .d-lang:after,
-.markdown-body .mermaid-wrap:after,
-.markdown-body div.highlighter-rouge:after {
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-  font-size: 12px;
-  content: attr(data-lang);
-  padding: 0 5px;
-  color: #bbc0c5;
-}
 .markdown-body a {
   color: #0366d6;
 }
