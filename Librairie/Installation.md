@@ -15,6 +15,8 @@ sort: 1
 
 - Vous avez un compte GitHub. Si ce n'est pas le cas, créez votre compte en suivant [ce lien](https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home).
 
+
+
 ##  Windows Subsystem for Linux (Recommendée)
 
 ### Installation du logiciel WSL
@@ -112,62 +114,6 @@ Enfin, installez Jekyll et Bundler :
 gem install jekyll bundler
 ```
 
-Finalement, on peut créer notre nouveau siteweb à l'aide de la commande `jekyll new <siteweb.name>`
-
-```ruby
-jekyll new mon-siteweb
-```
-
-Le résultat devrait ressembler à ceci:
-
-```sh
-phil@debian-client:~$ jekyll new mon-sitweb
-Running bundle install in /home/phil/mon-sitweb...
-  Bundler: Fetching gem metadata from https://rubygems.org/..........
-  Bundler: Resolving dependencies...
-  Bundler: Using bundler 2.3.4
-  Bundler: Using public_suffix 4.0.6
-  Bundler: Using colorator 1.1.0
-  Bundler: Using concurrent-ruby 1.1.9
-  Bundler: Using eventmachine 1.2.7
-  Bundler: Using http_parser.rb 0.8.0
-  Bundler: Using ffi 1.15.5
-  Bundler: Using forwardable-extended 2.6.0
-  Bundler: Using rb-fsevent 0.11.0
-  Bundler: Fetching rexml 3.2.5
-  Bundler: Using liquid 4.0.3
-  Bundler: Using mercenary 0.4.0
-  Bundler: Using rouge 3.27.0
-  Bundler: Using safe_yaml 1.0.5
-  Bundler: Using unicode-display_width 1.8.0
-  Bundler: Using addressable 2.8.0
-  Bundler: Using em-websocket 0.5.3
-  Bundler: Using i18n 1.8.11
-  Bundler: Using sassc 2.4.0
-  Bundler: Using rb-inotify 0.10.1
-  Bundler: Using pathutil 0.16.2
-  Bundler: Using terminal-table 2.0.0
-  Bundler: Using jekyll-sass-converter 2.1.0
-  Bundler: Using listen 3.7.0
-  Bundler: Using jekyll-watch 2.2.1
-  Bundler: Installing rexml 3.2.5
-  Bundler: Using kramdown 2.3.1
-  Bundler: Using kramdown-parser-gfm 1.1.0
-  Bundler: Using jekyll 4.2.1
-  Bundler: Fetching jekyll-feed 0.16.0
-  Bundler: Fetching jekyll-seo-tag 2.7.1
-  Bundler: Installing jekyll-feed 0.16.0
-  Bundler: Installing jekyll-seo-tag 2.7.1
-  Bundler: Fetching minima 2.5.1
-  Bundler: Installing minima 2.5.1
-  Bundler: Bundle complete! 6 Gemfile dependencies, 31 gems now installed.
-  Bundler: Use `bundle info [gemname]` to see where a bundled gem is installed.
-New jekyll site installed in /home/phil/mon-sitweb.
-phil@debian-client:~$
-```
-
-On peu
-
 
 
 ### Clonage de la Repo
@@ -192,6 +138,18 @@ git clone https://github.com/nonBinaryGeek/jekyll-modele.git
   Receiving objects: 100% (443/443), 3.11 MiB | 9.91 MiB/s, done.
   Resolving deltas: 100% (130/130), done.
 ```
+
+Ensuite, nous devons indiquer répertoire que son origine sera la notre:
+
+```
+git remote set-url origin https://github.com/<your.username>.github.io
+```
+
+
+
+
+
+### Visualisation du siteweb
 
 Afin de prévisualiser notre site web, on se dirige dans le répertoire tout juste créer.
 
@@ -219,7 +177,7 @@ drwxr-xr-x 7 phil phil 4096 Jan  9 19:34 _includes
 drwxr-xr-x 3 phil phil 4096 Jan  9 19:34 _layouts
 ```
 
-On peut utiliser l'utilitaire `jekyll`, une fois dans le répertoire, afin de créer temporairement le siteweb qui sera accessible à l'adresse `http://127.0.0.1:4000`  
+On peut utiliser l'utilitaire `jekyll`, une fois dans le répertoire, afin de créer temporairement le siteweb qui sera accessible à l'adresse `http://127.0.0.1:4000` .
 
 ```sh
 bundle exec jekyll serve
@@ -241,3 +199,20 @@ Configuration file: /home/phil/git/jekyll-modele/_config.yml
   Server running... press ctrl-c to stop.
 ```
 
+**IMPORTANT**: La commande `bundle exec jekyll serve` accepte les paramètres `--port` et `--host`. Si l'on utilise une machine distante ou une machine virtuelle sans interface graphique pour travailler sur notre sitweb, on peut utiliser ces deux paramètres afin d'obtenir l'accès à notre site.
+
+Par exemple, si mon installation se trouve sur une VM à l'adresse `192.168.99.135`, je peux utiliser la commande suivante:
+
+```
+bundle exec jekyll server --port 4001 --host 192.168.99.135
+```
+
+Le résultat ressemblera alors au suivant:
+
+```
+ Auto-regeneration: enabled for '/home/phil/git/jekyll-modele'
+    Server address: http://192.168.99.135:4001
+  Server running... press ctrl-c to stop.
+```
+
+Je pourrai alors accéder au siteweb via un browser en tappant l'adresse IP combinée au port `http://192.168.99.135:4001`.
