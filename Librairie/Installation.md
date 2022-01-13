@@ -9,15 +9,34 @@ sort: 1
 
 > Ce guide d'installation ce veut claire et concis. Il n'y est donc pas question du fonctionnement avancé et des raisons motivants l'utilisations d'une commande ou d'un programme face à un autre. Les références afin d'obtenir d'avantages d'informations sont présentées au bas de la page.
 
-
-
 **PRÉREQUIS:**
 
 - Vous avez un compte GitHub. Si ce n'est pas le cas, créez votre compte en suivant [ce lien](https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home).
 
+Options d'installation:
+
+- **(OPTION 01) Windows Subsystem for Linux - WSL**
+- **(OPTION 02) Linux: Debian ou Ubuntu**
 
 
-##  Windows Subsystem for Linux (Recommendée)
+
+<!-- MarkdownTOC lowercase_only_ascii="true" depth=3 autolink="true" bracket="round" -->
+
+- [(OPTION 01) Windows Subsystem for Linux](#option-01-windows-subsystem-for-linux)
+  - [Installation du logiciel WSL](#installation-du-logiciel-wsl)
+- [(OPTION 01 et OPTION 02) WSL et Linux](#option-01-et-option-02-wsl-et-linux)
+  - [Configuration de GitHub](#configuration-de-github)
+  - [Préparation de GitHub Pages](#préparation-de-github-pages)
+  - [Création d'un Authentification TOKEN](#création-d'un-authentification-token)
+  - [(Optionnel) OPTION 01 SEULEMENT](#optionnel-option-01-seulement)
+- [(OPTION 01 et OPTION 02) Installation](#option-01-et-option-02-installation)
+  - [Installation de Jekyll](#installation-de-jekyll)
+  - [Clonage de la Repo](#clonage-de-la-repo)
+  - [Visualisation du siteweb](#visualisation-du-siteweb)
+
+<!-- /MarkdownTOC -->
+
+##  (OPTION 01) Windows Subsystem for Linux
 
 ### Installation du logiciel WSL
 
@@ -41,9 +60,11 @@ wsl --list --online
 
 
 
+## (OPTION 01 et OPTION 02) WSL et Linux
+
 ### Configuration de GitHub
 
-Une fois que WSL est installé, on peut installer `git` sur notre système.
+Une fois que WSL est installé, ou que notre machine Debian ou ubuntu est fonctionnelle, on peut installer `git` sur notre système.
 
 ```shell
 sudo apt update && sudo apt upgrade -y
@@ -52,7 +73,7 @@ sudo apt install git -y
 
 
 
-Pour configurer votre espace de travail Git, ouvrez une ligne de commande pour la distribution  dans laquelle vous travaillez et définissez votre nom avec la commande suivante (en remplaçant "**your name**" par votre nom d'utilisateur et "**your email**" par l'adresse courriel associée à votre compte) : 
+Pour configurer votre espace de travail Git, ouvrez une ligne de commande pour la distribution dans laquelle vous travaillez et définissez votre nom avec la commande suivante (en remplaçant "**your name**" par votre nom d'utilisateur et "**your email**" par l'adresse courriel associée à votre compte) : 
 
 ```sh
 git config --global user.name "Your Name"
@@ -60,6 +81,16 @@ git config --global user.email "youremail@domain.com"
 ```
 
 
+
+### Préparation de GitHub Pages
+
+Afin de pouvoir publier notre siteweb sous GitHub Pages, il faut créer une nouvelle repo qui aura le format suivant:
+
+**<your.username>.github.io**
+
+
+
+### Création d'un Authentification TOKEN
 
 Parfois, il arrive que GitHub soit restrictif lorsque l'on tente de modifier une *repo* qui nous appartient. À ce moment, il nous est impossible d'utiliser notre email et notre mot de passe lors des modifications. Il est donc préférable de créer un *token* d'authentification que l'on aura qu'à copier coller lorsqu'un mot de passe sera exigé. Afin de créer un *token*, il faut se connecter à [GitHub](https://github.com/login), se diriger sous nos *paramètres de compte*, descendre au bas de la page et selectionner les *Paramètres de Developpeur*.
 
@@ -75,11 +106,11 @@ Parfois, il arrive que GitHub soit restrictif lorsque l'on tente de modifier une
 
 
 
-**(Optionnel)**
+### (Optionnel) OPTION 01 SEULEMENT
 
 [Git Credential Manager (GCM)](https://github.com/GitCredentialManager/git-credential-manager) vous permet de vous authentifiez à un serveur Git distant. Ainsi, il est possible de mettre en place un méchanisme d'authentification permettant d'utiliser votre compte via la ligne de commande.
 
-Pour configurer GCM en concordance avec une distribution WSL, ouvrez votre distribution (Ubuntu) et saisissez cette commande: 
+Pour configurer GCM en concordance avec une distribution WSL, ouvrez votre distribution sous WSL et saisissez cette commande: 
 
 ```sh
 git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager-core.exe"
@@ -89,7 +120,9 @@ Pour plus de détails relativement à l'[authentification sous GitHub](https://d
 
 
 
-### Installation de Jekyll sur Ubuntu
+## (OPTION 01 et OPTION 02) Installation
+
+### Installation de Jekyll
 
 **Installer les dépendances**
 
@@ -99,7 +132,7 @@ Installez Ruby et les autres [prérequis ](https://jekyllrb.com/docs/installatio
 sudo apt-get install ruby-full build-essential zlib1g-dev
 ```
 
-Évitez d'installer les futures packages RubyGems (appelés gems) en tant qu'utilisateur root. Préférablement, configurez un répertoire d'installation de gem pour votre compte utilisateur auxquels nous ajouterons les `path` nécessaires dans notre fichier `~/.bashrc`.
+**IMPORTANT**: Évitez d'installer les futures packages RubyGems (appelés gems) en tant qu'utilisateur root. Préférablement, configurez un répertoire d'installation de gem pour votre compte utilisateur auxquels nous ajouterons les `path` nécessaires dans notre fichier `~/.bashrc`.
 
 ```sh
 echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
@@ -107,6 +140,8 @@ echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
 echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 ```
+
+**Installer les gems Jekyll et Bundler**
 
 Enfin, installez Jekyll et Bundler : 
 
@@ -118,7 +153,7 @@ gem install jekyll bundler
 
 ### Clonage de la Repo
 
-Afin d'obtenir une copie du Site, il suffit d'utiliser la commande git. Par contre, il est aussi préférable de se créer un répertoire qui servira d'espace de travail. Ici, nous avons créé un répertoire nommé **git**.
+Afin d'obtenir une copie du Site, il suffit d'utiliser la commande git. Par contre, il est aussi préférable de se créer un répertoire qui servira d'espace de travail. Ici, nous avons créé un répertoire nommé `~/git`.
 
 ```sh
 cd ~/
@@ -139,13 +174,11 @@ git clone https://github.com/nonBinaryGeek/jekyll-modele.git
   Resolving deltas: 100% (130/130), done.
 ```
 
-Ensuite, nous devons indiquer répertoire que son origine sera la notre:
+Ensuite, nous devons indiquer au répertoire que son origine sera la notre. Il est important de changer l'adresse URL ci-dessous afin qu'elle corresponde à la repo que nous avons créer lors de l'étape
 
+```sh
+git remote set-url origin https://github.com/<your.username>/<your.username>.github.io
 ```
-git remote set-url origin https://github.com/<your.username>.github.io
-```
-
-
 
 
 
@@ -203,16 +236,16 @@ Configuration file: /home/phil/git/jekyll-modele/_config.yml
 
 Par exemple, si mon installation se trouve sur une VM à l'adresse `192.168.99.135`, je peux utiliser la commande suivante:
 
-```
+```sh
 bundle exec jekyll server --port 4001 --host 192.168.99.135
 ```
 
 Le résultat ressemblera alors au suivant:
 
-```
+```sh
  Auto-regeneration: enabled for '/home/phil/git/jekyll-modele'
     Server address: http://192.168.99.135:4001
   Server running... press ctrl-c to stop.
 ```
 
-Je pourrai alors accéder au siteweb via un browser en tappant l'adresse IP combinée au port `http://192.168.99.135:4001`.
+On pourra alors accéder au siteweb via un browser en tappant l'adresse IP combinée au port `http://192.168.99.135:4001`.
