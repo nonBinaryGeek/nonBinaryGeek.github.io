@@ -8,7 +8,7 @@ description: Documentations permettant l'utilisation de Jekyll et Github
 ###  Afin d'utiliser un autre nom de domaine, utilisez le fichier CNAME  
 ###  sous root et simplement indiquer l'alternatif.                      
 ###  EXEMPLE --> echo 'docs.nonbinarygeek.ca' > CNAME                    
-url: https://github.com/nonBinaryGeek/jekyll-modele
+url: https://docs.nonbinarygeek.ca
 # baseurl: (URL Distant sur lequel s'appuit le theme) NE PAS CHANGER
 remote_theme: nonBinaryGeek/jekyll-modele
 # languages (Selon la ou les preferences)
