@@ -3,8 +3,6 @@ title: Installation
 sort: 1
 ---
 
-
-
 # Installation de l'environnement de travail
 
 > Ce guide d'installation ce veut claire et concis. Il n'y est donc pas question du fonctionnement avancé et des raisons motivants l'utilisations d'une commande ou d'un programme face à un autre. Les références afin d'obtenir d'avantages d'informations sont présentées au bas de la page.

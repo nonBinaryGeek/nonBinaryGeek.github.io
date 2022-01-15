@@ -1,8 +1,7 @@
 ---
-sort: 2
+sort: 3
 ---
 
-# Librairie
+# Modèles - *Templates*
 
 {% include list.liquid all=true %}
-
