@@ -1,8 +1,9 @@
 ---
 source: page.path
-sort: 2
+sort: 3
+title: Syntaxe Markdown
 ---
 
-# Répertoire 01
+# Syntaxe Markdown
 
 {% include list.liquid all=true %}

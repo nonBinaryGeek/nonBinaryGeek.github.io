@@ -1,8 +1,8 @@
 ---
 source: page.path
-sort: 3
+sort: 4
 ---
 
-# Répertoire 02
+# Ressources
 
 {% include list.liquid all=true %}

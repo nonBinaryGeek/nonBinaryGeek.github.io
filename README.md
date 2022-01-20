@@ -1,75 +1,22 @@
 # Modèle Jekyll - RTD - GitHubPages
 
-**Cette page est la *« Landing Page »* de notre site**  
+Ce site web présente la documentation nécessaire à l'utilisation du thème « *[Jekyll-modele](https://github.com/nonBinaryGeek/jekyll-modele)* » afin de déployer un site rapidement. Le déploiement du site web se fait via [GitHub Pages](https://pages.github.com/) et nécéssite donc une compte auprès de GitHub. Si vous n'avez pas un compte d'utilisateur, veuillez en créer un afin de procéder en vous dirigeant à [ce lien de création de compte](https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home).
 
-Vous pouvez complètement la modifier à votre guise, à commencer par changer le titre du Site Web ci-haut.
+Le thème utilise [Jekyll](https://jekyllrb.com/) afin de construire le site web rapidement, en générant les fichiers nécésssaires et en évitant l'utilisation d'une database. Jekyll propose une technique simple afin de construire les site web alors qu'il utilise les fichiers à syntaxe Markdown, et les convertis en HTML. Un fichier explicatif quant à la syntaxe Markdown est inclus dans la *GitHub Repository* que nous téléchargerons ainsi que sur le présent siteweb.
 
-Sur cette page, toutes l'information relative au fonctionnement du Site est synthétisée. De plus, il y est présenté les fichiers et répertoires prioritaires. Ainsi, il est peut-être plus facile de commencer premièrement par catégoriser les-dits répertoires & fichiers en deux groupes distincts : 
+Finalement, la documentation du présent site permenttant le déploiement d'un site via GitHub Pages à saveur du présent thème s'organise comme suit:
 
-- **Modifiable**:
+- [À Propos](https://docs.nonbinarygeek.ca/About/)
+- [Documentations](https://docs.nonbinarygeek.ca/Documentations/)
+  - [Préparation](https://docs.nonbinarygeek.ca/Documentations/Preparation.html)
+  - [Installation](https://docs.nonbinarygeek.ca/Documentations/Installation.html)
+  - [Configuration](https://docs.nonbinarygeek.ca/Documentations/Configuration.html)
+  - [Ressources Externes](https://docs.nonbinarygeek.ca/Documentations/Ressources.html)
 
-  Les répertoires et fichiers auxquels l'on réfère ici comme *modifiables* se veulent ceux dans lesquelles nous déployons le SiteWeb et ou l'administrateur est amené à effectuer les configurations nécessaires.
 
-- **Secondaires**:
 
-  Ces répertoires et fichiers n'ont pas à être modifier et servent davantages à la mise en page et aux déploiement global du site selon le thème. Ceux-ci ne seront donc pas aborder et expliquer.
+- [Modèle - *Templates*](https://docs.nonbinarygeek.ca/modeles_templates/)
+  - [Exemples de Fichiers](https://docs.nonbinarygeek.ca/modeles_templates/exemples-fichiers/)
+  - Outils Visuels
+  - Syntaxes Markdown
 
-### Répertoires et fichiers *Modifiables*
-
-```
-.
-├── About
-│   └── README.md
-├── Librairie
-│   ├── README.md
-│   ├── Installation.md
-│   └── Ressources.md
-├── Documentations
-|   ├── README.md
-│   ├── exemples-fichiers
-│   │   ├── fichier01.md
-│   │   ├── fichier02.md
-│   │   └── README.md
-│   ├── repertoire-01
-│   │   ├── markdown-syntaxe.md
-│   │   ├── commandes.md
-│   │   └── README.md
-│   └── repertoire-02
-│       ├── sous_repertoire-01.md
-│       ├── sous_repertoire-02.md
-│       └── README.md
-|
-├── README.md
-├── CNAME
-├── Gemfile
-├── Makefile
-└── _config.yml
-
-```
-
-> Les fichier ci-hauts sont ceux qui nous intéressent.
->
-
-### Répertoires et fichiers *Secondaires*
-
-```
-.
-├── _includes
-│   └── [...]
-├── _layouts
-│   └── [...]
-├── _sass
-│   └── [...]
-├── _site
-│   └── [...]
-├── assets
-│   └── [...]
-├── LICENSE
-├── jekyll-modele.gemspec
-├── package.json
-├── requirements.txt
-├── update.sh
-└── webpack.config.js
-```
-
-> Il n'est pas nécessaire de modifier ces fichiers et répertoires, et ce, de façon récursive.

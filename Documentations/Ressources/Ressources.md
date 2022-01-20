@@ -1,9 +1,9 @@
 ---
-title: Ressources
-sort: 4
+title: Ressources Externes
+sort: 1
 ---
 
-# Ressources
+# Ressources Externes
 
 - [Windows SubSystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/about)
 

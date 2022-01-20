@@ -1,8 +1,9 @@
 ---
 source: page.path
 sort: 2
+title: Outils Visuels
 ---
 
-# Sous Répertoire 02
+# Outils Visuels
 
 {% include list.liquid all=true %}
