@@ -1,6 +1,6 @@
 ---
 title: Installation
-sort: 1
+sort: 2
 ---
 
 # Installation de l'environnement de travail

@@ -1,6 +1,6 @@
 ---
 title: Configuration
-sort: 2
+sort: 3
 ---
 
 # Configuration
