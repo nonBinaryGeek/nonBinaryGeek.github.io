@@ -3230,7 +3230,7 @@ p.explain .minibutton {
 }
 .fa-minus-square-o:before,
 .toctree > ul .toc.current > a .fa-plus-square-o:before {
-  content: "";
+  content: "";
 }
 .fa-level-up:before {
   content: "";
