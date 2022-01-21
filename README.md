@@ -12,7 +12,7 @@ Finalement, la documentation du présent site permet le déploiement d'un site v
   - [Installation](https://docs.nonbinarygeek.ca/Documentations/Installation)
   - [Configuration](https://docs.nonbinarygeek.ca/Documentations/Configuration)
   - [Ressources](https://docs.nonbinarygeek.ca/Documentations/Ressources)
-  - [Syntaxe Markdown](https://docs.nonbinarygeek.ca/Documentations/syntaxe/README.html)
+  - [Syntaxe Markdown](https://docs.nonbinarygeek.ca/Documentations/syntaxe/)
 
 
 
