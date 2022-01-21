@@ -283,7 +283,7 @@ git push
 Afin de vérifier que notre *repository* est créé, et qu'elle contient le contenu de la *repo* jekyll-modele, on peut utiliser un *browser* et se diriger au site web de GitHub, ou encore, simplement tenter de cloner notre nouvelle *repo*.
 ```
 
-Pour cloner notre nouvelle repo incluant le contenu du modele de base **jekyll-modele**, on utilise à nouveau la commande `git clone`.
+Pour cloner notre nouvelle repo incluant le contenu du modele de base **jekyll-modele**, on utilise à nouveau la commande `git`.
 
 ```sh
 git clone https://github.com/<username>/<username>github.io
