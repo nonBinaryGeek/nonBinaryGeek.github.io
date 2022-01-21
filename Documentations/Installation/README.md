@@ -30,10 +30,8 @@ Les options d'installation proposées utilisent globalement la même démarche. 
 - [Windows Subsystem for Linux](#windows-subsystem-for-linux)
   - [Installation du logiciel WSL](#installation-du-logiciel-wsl)
 - [GitHub](#github)
-  - [Configuration de GitHub](#configuration-de-github)
-  - [Préparation de GitHub Pages](#préparation-de-github-pages)
-  - [Création d'un Authentification TOKEN](#création-d'un-authentification-token)
-  - [(Optionnel) WSL SEULEMENT](#optionnel-wsl-seulement)
+  - [Installation & Configuration générale de GitHub](#installation-&-configuration-générale-de-github)
+  - [Authentification](#authentification)
 - [Installation](#installation)
   - [Installation de Jekyll](#installation-de-jekyll)
   - [Clonage de la Repo](#clonage-de-la-repo)
@@ -93,7 +91,7 @@ git config --global user.email "youremail@domain.com"
 Afin de travailler à partir de la ligne de commande, deux options s'offrent à nous. Soit nous utilisons un outil supplémentaire nommé CLI, ou nous créons un *Authentification token* dans nos paramètres de compte via github.com
 ```
 
-**GitHub CLI**
+**GitHub CLI** - *Option 01*
 
 Cette méthode à l'avantage d'éviter la création d'un *authentification token*, lequel serait exigé lors de chaque application des modifications apportées à notre *repo*. Afin d'utiliser [Github CLI](https://cli.github.com/manual/gh), et donc, d'utiliser intégralement GitHub à partir de la ligne de commande, il nous faut installer [Go 1.16+](https://go.dev/doc/install).
 
@@ -146,17 +144,13 @@ Press Enter to open github.com in your browser...
 
 
 
-
-
-**Création d'un Authentification TOKEN**
+**Authentification Token**  - *Option 02*
 
 Si GitHub CLI n'est pas utilisé, la création d'un *authentification token* sera nécessaire. En effet, il arrive que GitHub soit restrictif lorsque l'on tente de modifier une *repo* qui nous appartient. À ce moment, il nous est impossible d'utiliser notre email et notre mot de passe lors des modifications. Il est donc préférable de créer un *token* d'authentification que l'on aura qu'à copier coller lorsqu'un mot de passe sera exigé. Afin de créer un *token*, il faut se connecter à [GitHub](https://github.com/login), se diriger sous nos *paramètres de compte*, descendre au bas de la page et selectionner les *Paramètres de Developpeur*.
 
 Pour obtenir davantage d'information sur la création d'un *Authentification Token*, [consultez la documentation officielle](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
 
-
-
-### (Optionnel) WSL SEULEMENT
+**(Optionnel) WSL SEULEMENT**
 
 [Git Credential Manager (GCM)](https://github.com/GitCredentialManager/git-credential-manager) vous permet de vous authentifiez à un serveur Git distant. Ainsi, il est possible de mettre en place un méchanisme d'authentification permettant d'utiliser votre compte via la ligne de commande.
 
