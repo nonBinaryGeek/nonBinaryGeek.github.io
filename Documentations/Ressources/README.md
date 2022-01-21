@@ -1,6 +1,6 @@
 ---
-title: ressources
-source: page_path
+source: page.path
+title: Ressources
 sort: 4
 ---
 
