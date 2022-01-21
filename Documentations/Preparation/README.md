@@ -10,18 +10,18 @@ title: Préparation
 
 Sur cette page, l'information relative au fonctionnement du site web est synthétisée. Plus précisément, les fichiers et répertoires prioritaires seront présentés. Ainsi, il est peut-être plus facile de commencer, avant tout, par catégoriser les-dits répertoires & fichiers en deux groupes distincts: 
 
-- **Modifiable**:
+- **Modifiables**:
 
-  Les répertoires et fichiers auxquels l'on réfère ici comme *modifiables* se veulent ceux dans lesquelles nous déployons le SiteWeb et ou l'administrateur est amené à effectuer les configurations nécessaires.
+  Les répertoires et fichiers auxquels l'on réfère ici comme *modifiables* se veulent ceux dans lesquelles nous déployons le site web et ou l'administrateur est amené à effectuer les configurations nécessaires.
 
 - **Secondaires**:
 
-  Ces répertoires et fichiers n'ont pas à être modifier et servent davantages à la mise en page et aux déploiement global du site selon le thème. Ceux-ci ne seront donc pas abordés et expliqués.
+  Ces répertoires et fichiers n'ont pas à être modifier et servent davantages à la mise en page et aux déploiement global du site selon le thème. Ceux-ci ne seront donc pas abordés et expliqués dans un premier temps.
 
 
 
 ```note
-Les répertoires et fichiers présentés ci-bas ne représentent pas l'organisation du présent site. Ceux-ci réfèrent à la *repository* que nous utiliseront afin de monter le nouveau siteweb. Somme toute, le présent site <`https://docs.nonbinarygeek.ca/`> sert avant tout de guide afin de déployer un siteweb contenant, au départ, les répertoires et fichiers suivant.   
+Les répertoires et fichiers présentés ci-bas ne représentent pas l'organisation du présent site. Ceux-ci réfèrent à la *repository* que nous utiliseront afin de monter le nouveau site web. Somme toute, le présent site `https://docs.nonbinarygeek.ca/` sert avant tout de guide afin de déployer un site web contenant, au départ, les répertoires et fichiers suivant.   
 ```
 
 
@@ -56,7 +56,7 @@ Les répertoires et fichiers présentés ci-bas ne représentent pas l'organisat
 |
 ├── README.md
 ├── CNAME
-├──jekyll-modele.gemspec
+├── jekyll-modele.gemspec
 └── _config.yml
 
 ```

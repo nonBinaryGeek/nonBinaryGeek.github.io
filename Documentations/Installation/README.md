@@ -16,28 +16,32 @@ title: Installation
 
 Options d'installation:
 
-- **(OPTION 01) Windows Subsystem for Linux - WSL**
-- **(OPTION 02) Linux: Debian ou Ubuntu**
+- **Windows Subsystem for Linux - WSL**
+- **Linux: Debian ou Ubuntu**
+
+```note
+Les options d'installation proposées utilisent globalement la même démarche. Plus précisément, l'utilisation de WSL se traduit par la possibilité de déployer un sous-système Linux en Windows. WSL utilise dans ce cas-ci Ubuntu et du moment qu'il est installé, le déploiement est identique à un serveur dédié ou une VM Ubuntu/Debian
+```
 
 
 
 <!-- MarkdownTOC lowercase_only_ascii="true" depth=3 autolink="true" bracket="round" -->
 
-- [(OPTION 01) Windows Subsystem for Linux](#option-01-windows-subsystem-for-linux)
+- [Windows Subsystem for Linux](#windows-subsystem-for-linux)
   - [Installation du logiciel WSL](#installation-du-logiciel-wsl)
-- [(OPTION 01 et OPTION 02) WSL et Linux](#option-01-et-option-02-wsl-et-linux)
+- [GitHub](#github)
   - [Configuration de GitHub](#configuration-de-github)
   - [Préparation de GitHub Pages](#préparation-de-github-pages)
   - [Création d'un Authentification TOKEN](#création-d'un-authentification-token)
-  - [(Optionnel) OPTION 01 SEULEMENT](#optionnel-option-01-seulement)
-- [(OPTION 01 et OPTION 02) Installation](#option-01-et-option-02-installation)
+  - [(Optionnel) WSL SEULEMENT](#optionnel-wsl-seulement)
+- [Installation](#installation)
   - [Installation de Jekyll](#installation-de-jekyll)
   - [Clonage de la Repo](#clonage-de-la-repo)
   - [Visualisation du siteweb](#visualisation-du-siteweb)
 
 <!-- /MarkdownTOC -->
 
-##  (OPTION 01) Windows Subsystem for Linux
+##  Windows Subsystem for Linux
 
 ### Installation du logiciel WSL
 
@@ -61,9 +65,9 @@ wsl --list --online
 
 
 
-## (OPTION 01 et OPTION 02) WSL et Linux
+## GitHub
 
-### Configuration de GitHub
+### Installation & Configuration générale de GitHub
 
 Une fois que WSL est installé, ou que notre machine Debian ou ubuntu est fonctionnelle, on peut installer `git` sur notre système.
 
@@ -83,14 +87,6 @@ git config --global user.email "youremail@domain.com"
 
 
 
-### Préparation de GitHub Pages
-
-Afin de pouvoir publier notre siteweb sous GitHub Pages, il faut créer une nouvelle repo qui aura le format suivant:
-
-**<your.username>.github.io**
-
-
-
 ### Création d'un Authentification TOKEN
 
 Parfois, il arrive que GitHub soit restrictif lorsque l'on tente de modifier une *repo* qui nous appartient. À ce moment, il nous est impossible d'utiliser notre email et notre mot de passe lors des modifications. Il est donc préférable de créer un *token* d'authentification que l'on aura qu'à copier coller lorsqu'un mot de passe sera exigé. Afin de créer un *token*, il faut se connecter à [GitHub](https://github.com/login), se diriger sous nos *paramètres de compte*, descendre au bas de la page et selectionner les *Paramètres de Developpeur*.
@@ -107,7 +103,7 @@ Parfois, il arrive que GitHub soit restrictif lorsque l'on tente de modifier une
 
 
 
-### (Optionnel) OPTION 01 SEULEMENT
+### (Optionnel) WSL SEULEMENT
 
 [Git Credential Manager (GCM)](https://github.com/GitCredentialManager/git-credential-manager) vous permet de vous authentifiez à un serveur Git distant. Ainsi, il est possible de mettre en place un méchanisme d'authentification permettant d'utiliser votre compte via la ligne de commande.
 
@@ -121,19 +117,31 @@ Pour plus de détails relativement à l'[authentification sous GitHub](https://d
 
 
 
-## (OPTION 01 et OPTION 02) Installation
+## Installation
 
 ### Installation de Jekyll
 
 **Installer les dépendances**
 
-Installez Ruby et les autres [prérequis ](https://jekyllrb.com/docs/installation/#requirements): 
+Installez Ruby et les autres [prérequis ](https://jekyllrb.com/docs/installation/#requirements):
+
+<u>Ubuntu 20.04</u>
 
 ```sh
-sudo apt-get install ruby-full build-essential zlib1g-dev
+sudo apt install ruby-full build-essential zlib1g-dev
 ```
 
-**IMPORTANT**: Évitez d'installer les futures packages RubyGems (appelés gems) en tant qu'utilisateur root. Préférablement, configurez un répertoire d'installation de gem pour votre compte utilisateur auxquels nous ajouterons les `path` nécessaires dans notre fichier `~/.bashrc`.
+<u>Debian 11</u>
+
+```sh
+sudo apt install ruby-full build-essential
+```
+
+```danger
+**Évitez** d'installer les futures packages RubyGems (appelés gems) en tant qu'utilisateur **root**. Préférablement, configurez un répertoire d'installation de gems pour votre compte utilisateur auxquel nous ajouterons les `path` nécessaires dans notre fichier `~/.bashrc`
+```
+
+Afin d'ajouter les `$PATH` nécéssaires à l'utilisation des gems en tant qu'utilisateur standard, on peut procéder aux commandes suivantes: 
 
 ```sh
 echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
@@ -162,7 +170,13 @@ mkdir git
 cd git
 ```
 
-Enfin, on peut cloner la *repo* située sous [ce lien](https://github.com/nonBinaryGeek/jekyll-modele.git).
+Enfin, on peut cloner la *repo* située sous [ce lien](https://github.com/nonBinaryGeek/jekyll-modele.git), à l'aide de la commande suivante:
+
+```sh
+git clone https://github.com/nonBinaryGeek/jekyll-modele.git
+```
+
+Le résultat devrait ressembler au suivant:
 
 ```sh
 git clone https://github.com/nonBinaryGeek/jekyll-modele.git
@@ -175,10 +189,57 @@ git clone https://github.com/nonBinaryGeek/jekyll-modele.git
   Resolving deltas: 100% (130/130), done.
 ```
 
-Ensuite, nous devons indiquer au répertoire que son origine sera la notre. Il est important de changer l'adresse URL ci-dessous afin qu'elle corresponde à la repo que nous avons créer lors de l'étape
+Une fois le clonage terminé, on obtient un répertoire nommé **jekyll-modele**. Utilisez la commande `ls` afin de vous assurer que la *repository* est belle et bien présente.
+
+Nous devons désormais créer notre propre *repository* afin de construire le site. Pour y arriver, deux avenues sont possibles. Nous pouvons procéder à la création d'une repository via le site internet de github, ou utilisé directement la ligne de commande (recommandée).
+
+```warning
+La nouvelle *repository* doit correspondre à la formule **<username>.github.io** 
+```
+
+La commande utilise la composition ci-bas.
 
 ```sh
-git remote set-url origin https://github.com/<your.username>/<your.username>.github.io
+curl -u '<username>' https://api.github.com/user/repos -d '{"name":"<username>.github.io"}'
+```
+
+Afin de créer la *repo* à partir de la ligne de commande, substituez votre nom d'utilisateur à la commande ci-haut en y échangeant les deux entrées ***username*** avec vos informations GitHub.
+
+À titre d'exemple, si mon nom d'utilisateur GitHub est **johndoe**, la commande sera:
+
+```sh
+curl -u 'johndoe' https://api.github.com/user/repos -d '{"name":"johndoe.github.io"}'
+```
+
+Une fois que notre *repo* est créée, on peut simplement se diriger dans le répertoire `~/git/jekyll-modele` qui représente la *repo* que nous avons précédemment clonée. Finalement, on change ici l'origine de la *repo* clonée pour qu'elle est comme nouvel origine la *repo* créée - **toujours en substituant username**. 
+
+```sh
+git remote set-url origin https://github.com/<username>/<username>.github.io
+```
+
+Par exemple, si on reprend l'exemple de l'utilisateur GitHub **johndoe**:
+
+```sh
+cd ~/git/jekyll-modele
+git remote set-url origin https://github.com/johndoe/johndoe.github.io
+```
+
+Finalement, on envoie le contenue de notre répertoire `~/git/jekyll-modele` à notre *repo*.
+
+```sh
+git add .
+git commit .
+git push
+```
+
+```tip
+Afin de vérifier que notre *repository* est créé, et qu'elle contient le contenu de la *repo* jekyll-modele, on peut utiliser un *browser* et se diriger au site web de GitHub, ou encore, simplement tenter de cloner notre nouvelle *repo*.
+```
+
+Pour cloner notre nouvelle repo incluant le contenu du modele de base **jekyll-modele**, on utilise à nouveau la commande `git clone`.
+
+```sh
+git clone https://github.com/<username>/<username>github.io
 ```
 
 
