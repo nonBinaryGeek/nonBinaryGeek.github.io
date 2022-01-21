@@ -11,12 +11,11 @@ Finalement, la documentation du présent site permet le déploiement d'un site v
   - [Préparation](https://docs.nonbinarygeek.ca/Documentations/Preparation.html)
   - [Installation](https://docs.nonbinarygeek.ca/Documentations/Installation.html)
   - [Configuration](https://docs.nonbinarygeek.ca/Documentations/Configuration.html)
-  - [Ressources Externes](https://docs.nonbinarygeek.ca/Documentations/Ressources.html)
+  - [Ressources](https://docs.nonbinarygeek.ca/Documentations/Ressources.html)
+  - [Syntaxe Markdown](https://docs.nonbinarygeek.ca/Documentations/syntaxe/README.html)
 
 
 
 - [Modèle - *Templates*](https://docs.nonbinarygeek.ca/modeles_templates/)
   - [Exemples de Fichiers](https://docs.nonbinarygeek.ca/modeles_templates/exemples-fichiers/)
-  - [Outils Visuels](https://docs.nonbinarygeek.ca/modeles_templates/Outils-visuels/)
-  - [Syntaxe Markdown](https://docs.nonbinarygeek.ca/modeles_templates/Syntaxe-Markdown/)
 
