@@ -87,19 +87,72 @@ git config --global user.email "youremail@domain.com"
 
 
 
-### Création d'un Authentification TOKEN
+### Authentification
 
-Parfois, il arrive que GitHub soit restrictif lorsque l'on tente de modifier une *repo* qui nous appartient. À ce moment, il nous est impossible d'utiliser notre email et notre mot de passe lors des modifications. Il est donc préférable de créer un *token* d'authentification que l'on aura qu'à copier coller lorsqu'un mot de passe sera exigé. Afin de créer un *token*, il faut se connecter à [GitHub](https://github.com/login), se diriger sous nos *paramètres de compte*, descendre au bas de la page et selectionner les *Paramètres de Developpeur*.
+```note
+Afin de travailler à partir de la ligne de commande, deux options s'offrent à nous. Soit nous utilisons un outil supplémentaire nommé CLI, ou nous créons un *Authentification token* dans nos paramètres de compte via github.com
+```
 
-<img src="img/github.png" style="zoom:50%;" />
+**GitHub CLI**
+
+Cette méthode à l'avantage d'éviter la création d'un *authentification token*, lequel serait exigé lors de chaque application des modifications apportées à notre *repo*. Afin d'utiliser [Github CLI](https://cli.github.com/manual/gh), et donc, d'utiliser intégralement GitHub à partir de la ligne de commande, il nous faut installer [Go 1.16+](https://go.dev/doc/install).
+
+Simplement, on effectue l'installation et la configuration de **GO** à l'aide des commandes suivantes:
+
+```sh
+wget https://go.dev/dl/go1.17.6.linux-amd64.tar.gz
+tar xvzf go1.17.6.linux-amd64.tar.gz
+sudo mv go /usr/local/bin
+echo '# GO env PATH system-wide' >> /etc/profile
+echo 'export PATH="$PATH:/usr/local/bin/go/bin"' >> /etc/profile
+source /etc/profile
+```
+
+Pour vérifier que l'on à bel et bien installé GO et que la version correspond à 1.17.6.
+
+```sh
+go version
+```
+
+On peut enfin procéder à [l'installation de CLI](https://github.com/cli/cli).
+
+```sh
+git clone https://github.com/cli/cli.git gh-cli
+cd gh-cli
+sudo make install
+```
+
+Une fois que CLI est installé, on peut se connecter à notre compte GitHub via la ligne de commande.
+
+```sh
+gh auth login
+```
+
+Cette commande aura pour effet de nous demander notre identifiant, notre mot de passe, et finalement, elle nous redirigera vers un browser pour qu'on se connecte à l'aide d'un. Simplement, la commande aura pour résultat quelque chose de semblable à l'exemple suivant:
+
+```sh
+phil@DESKTOP-5M4B2DV:~$ gh auth login
+? What account do you want to log into? GitHub.com
+? What is your preferred protocol for Git operations? HTTPS
+? How would you like to authenticate GitHub CLI? Login with a web browser
+
+! First copy your one-time code: DABA-8BF1
+Press Enter to open github.com in your browser...
+✓ Authentication complete.
+- gh config set -h github.com git_protocol https
+✓ Configured git protocol
+✓ Logged in as nonBinaryGeek
+```
 
 
 
-<img src="img/github2.png" style="zoom:63%;" />
 
 
+**Création d'un Authentification TOKEN**
 
-<img src="img/github3.png" style="zoom:100%;" />
+Si GitHub CLI n'est pas utilisé, la création d'un *authentification token* sera nécessaire. En effet, il arrive que GitHub soit restrictif lorsque l'on tente de modifier une *repo* qui nous appartient. À ce moment, il nous est impossible d'utiliser notre email et notre mot de passe lors des modifications. Il est donc préférable de créer un *token* d'authentification que l'on aura qu'à copier coller lorsqu'un mot de passe sera exigé. Afin de créer un *token*, il faut se connecter à [GitHub](https://github.com/login), se diriger sous nos *paramètres de compte*, descendre au bas de la page et selectionner les *Paramètres de Developpeur*.
+
+Pour obtenir davantage d'information sur la création d'un *Authentification Token*, [consultez la documentation officielle](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
 
 
 
@@ -162,7 +215,7 @@ gem install jekyll bundler
 
 ### Clonage de la Repo
 
-Afin d'obtenir une copie du Site, il suffit d'utiliser la commande git. Par contre, il est aussi préférable de se créer un répertoire qui servira d'espace de travail. Ici, nous avons créé un répertoire nommé `~/git`.
+Afin d'obtenir une copie du site, il suffit d'utiliser la commande git. Par contre, il est aussi préférable de se créer un répertoire qui servira d'espace de travail. Ici, nous avons créé un répertoire nommé `~/git`.
 
 ```sh
 cd ~/
