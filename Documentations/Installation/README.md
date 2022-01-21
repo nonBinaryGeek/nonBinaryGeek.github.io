@@ -36,6 +36,7 @@ Les options d'installation proposées utilisent globalement la même démarche. 
   - [Installation de Jekyll](#installation-de-jekyll)
   - [Clonage de la Repo](#clonage-de-la-repo)
   - [Visualisation du siteweb](#visualisation-du-siteweb)
+- [Publication du site](#publication-du-site)
 
 <!-- /MarkdownTOC -->
 
