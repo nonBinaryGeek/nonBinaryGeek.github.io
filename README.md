@@ -8,10 +8,10 @@ Finalement, la documentation du présent site permet le déploiement d'un site v
 
 - [À Propos](https://docs.nonbinarygeek.ca/About/)
 - [Documentations](https://docs.nonbinarygeek.ca/Documentations/)
-  - [Préparation](https://docs.nonbinarygeek.ca/Documentations/Preparation.html)
-  - [Installation](https://docs.nonbinarygeek.ca/Documentations/Installation.html)
-  - [Configuration](https://docs.nonbinarygeek.ca/Documentations/Configuration.html)
-  - [Ressources](https://docs.nonbinarygeek.ca/Documentations/Ressources.html)
+  - [Préparation](https://docs.nonbinarygeek.ca/Documentations/Preparation/)
+  - [Installation](https://docs.nonbinarygeek.ca/Documentations/Installation)
+  - [Configuration](https://docs.nonbinarygeek.ca/Documentations/Configuration)
+  - [Ressources](https://docs.nonbinarygeek.ca/Documentations/Ressources)
   - [Syntaxe Markdown](https://docs.nonbinarygeek.ca/Documentations/syntaxe/README.html)
 
 
