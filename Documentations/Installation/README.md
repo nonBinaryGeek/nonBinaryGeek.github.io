@@ -286,38 +286,45 @@ Afin de vérifier que notre *repository* est créé, et qu'elle contient le cont
 Pour cloner notre nouvelle repo incluant le contenu du modele de base **jekyll-modele**, on utilise à nouveau la commande `git`.
 
 ```sh
-git clone https://github.com/<username>/<username>github.io
+cd ~/git
+git clone https://github.com/<username>/<username>.github.io
 ```
 
 
 
 ### Visualisation du siteweb
 
-Afin de prévisualiser notre site web, on se dirige dans le répertoire tout juste créer.
+Afin de prévisualiser notre site web, on se dirige dans le répertoire associé à notre nouveau site -i.e `~/git/jekyll-modele` si on à simplement changer son origine, ou `~/git/<username>.github.io` si nous avons cloner notre propre repo.
 
 ```sh
-ls
-jekyll-modele
-cd jekyll-modele/
+cd ~/git/jekyll-modele/
 ls -lt
-drwxr-xr-x 5 phil phil 4096 Jan  9 19:34 assets
--rw-r--r-- 1 phil phil  841 Jan  9 19:34 package.json
--rw-r--r-- 1 phil phil   25 Jan  9 19:34 requirements.txt
--rw-r--r-- 1 phil phil 2571 Jan  9 19:34 update.sh
--rw-r--r-- 1 phil phil  897 Jan  9 19:34 webpack.config.js
-drwxr-xr-x 4 phil phil 4096 Jan  9 19:34 _sass
-drwxr-xr-x 2 phil phil 4096 Jan  9 19:34 About
--rw-r--r-- 1 phil phil    0 Jan  9 19:34 CNAME
-drwxr-xr-x 5 phil phil 4096 Jan  9 19:34 Documentations
--rw-r--r-- 1 phil phil   89 Jan  9 19:34 Gemfile
--rw-r--r-- 1 phil phil 8150 Jan  9 19:34 Gemfile.lock
--rw-r--r-- 1 phil phil 1091 Jan  9 19:34 LICENSE
--rw-r--r-- 1 phil phil 1414 Jan  9 19:34 Makefile
--rw-r--r-- 1 phil phil 2440 Jan  9 19:34 README.md
--rw-r--r-- 1 phil phil 1359 Jan  9 19:34 _config.yml
-drwxr-xr-x 7 phil phil 4096 Jan  9 19:34 _includes
-drwxr-xr-x 3 phil phil 4096 Jan  9 19:34 _layouts
+  drwxr-xr-x 5 phil phil 4096 Jan 21 10:53 assets
+  -rw-r--r-- 1 phil phil  579 Jan 21 10:53 jekyll-modele.gemspec
+  -rw-r--r-- 1 phil phil  841 Jan 21 10:53 package.json
+  -rw-r--r-- 1 phil phil   25 Jan 21 10:53 requirements.txt
+  -rw-r--r-- 1 phil phil  897 Jan 21 10:53 webpack.config.js
+  drwxr-xr-x 4 phil phil 4096 Jan 21 10:53 _sass
+  drwxr-xr-x 2 phil phil 4096 Jan 21 10:53 About
+  -rw-r--r-- 1 phil phil    0 Jan 21 10:53 CNAME
+  drwxr-xr-x 4 phil phil 4096 Jan 21 10:53 Documentations
+  -rw-r--r-- 1 phil phil   89 Jan 21 10:53 Gemfile
+  -rw-r--r-- 1 phil phil 8150 Jan 21 10:53 Gemfile.lock
+  -rw-r--r-- 1 phil phil 1108 Jan 21 10:53 LICENSE
+  drwxr-xr-x 2 phil phil 4096 Jan 21 10:53 Librairie
+  -rw-r--r-- 1 phil phil  212 Jan 21 10:53 README.md
+  -rw-r--r-- 1 phil phil 1285 Jan 21 10:53 _config.yml
+  drwxr-xr-x 7 phil phil 4096 Jan 21 10:53 _includes
+  drwxr-xr-x 3 phil phil 4096 Jan 21 10:53 _layouts
 ```
+
+On doit s'assurer d'avoir les prérequis nécessaires à l'aide des commandes suivantes:
+
+```sh
+bundle install
+```
+
+
 
 On peut utiliser l'utilitaire `jekyll`, une fois dans le répertoire, afin de créer temporairement le siteweb qui sera accessible à l'adresse `http://127.0.0.1:4000` .
 
@@ -341,7 +348,9 @@ Configuration file: /home/phil/git/jekyll-modele/_config.yml
   Server running... press ctrl-c to stop.
 ```
 
-**IMPORTANT**: La commande `bundle exec jekyll serve` accepte les paramètres `--port` et `--host`. Si l'on utilise une machine distante ou une machine virtuelle sans interface graphique pour travailler sur notre sitweb, on peut utiliser ces deux paramètres afin d'obtenir l'accès à notre site.
+```tip
+La commande `bundle exec jekyll serve` accepte les paramètres `--port` et `--host`. Si l'on utilise une machine distante ou une machine virtuelle sans interface graphique pour travailler sur notre sitweb, on peut utiliser ces deux paramètres afin d'obtenir l'accès à notre site.
+```
 
 Par exemple, si mon installation se trouve sur une VM à l'adresse `192.168.99.135`, je peux utiliser la commande suivante:
 
@@ -358,3 +367,24 @@ Le résultat ressemblera alors au suivant:
 ```
 
 On pourra alors accéder au siteweb via un browser en tappant l'adresse IP combinée au port `http://192.168.99.135:4001`.
+
+## Publication du site
+
+Lorsque l'on est satisfait de notre site web, et chaque fois que l'on décide de modifier/éditer/ajouter des documents, on utilise les commandes suivantes afin d'appliquer les changemnet à notre *repo*, et donc conséquement à notre site web.
+
+```sh
+# Si on utilise toujours le modele de base
+$ cd ~/git/jekyll-modele
+
+# Si on utilise notre propre clone
+$ cd ~/git/<username>.github.io
+
+```
+
+```sh
+git add .
+git commit .
+git push
+```
+
+Notre site web sera alors disponible avec nos modifications en se dirigeant vers https://< username >.github.io
