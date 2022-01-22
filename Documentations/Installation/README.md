@@ -102,9 +102,10 @@ Simplement, on effectue l'installation et la configuration de **GO** à l'aide d
 wget https://go.dev/dl/go1.17.6.linux-amd64.tar.gz
 tar xvzf go1.17.6.linux-amd64.tar.gz
 sudo mv go /usr/local/bin
-echo '# GO env PATH ' | sudo tee -a /etc/profile
-echo 'export PATH="$PATH:/usr/local/bin/go/bin"' | sudo tee -a /etc/profile
-source /etc/profile
+echo '# GO env PATH ' >> ~/.bashrc
+echo 'export PATH="$PATH:/usr/local/bin/go/bin"' >> ~/.bashrc
+source ~/.bashrc
+sudo sed -i 's,secure_path=",secure_path="/usr/local/bin/go/bin:,g' /etc/sudoers
 ```
 
 Pour vérifier que l'on à bel et bien installé GO et que la version correspond à 1.17.6.
