@@ -249,7 +249,7 @@ La nouvelle *repository* doit correspondre à la formule **<username>.github.io*
 La commande utilise la composition ci-bas.
 
 ```sh
-curl -u '<username>' https://api.github.com/user/repos -d '{"name":"<username>.github.io"}'
+gh repo create <username>.github.io
 ```
 
 Afin de créer la *repo* à partir de la ligne de commande, substituez votre nom d'utilisateur à la commande ci-haut en y échangeant les deux entrées ***username*** avec vos informations GitHub.
@@ -257,7 +257,7 @@ Afin de créer la *repo* à partir de la ligne de commande, substituez votre nom
 À titre d'exemple, si mon nom d'utilisateur GitHub est **johndoe**, la commande sera:
 
 ```sh
-curl -u 'johndoe' https://api.github.com/user/repos -d '{"name":"johndoe.github.io"}'
+gh repo create johndoe.github.io
 ```
 
 Une fois que notre *repo* est créée, on peut simplement se diriger dans le répertoire `~/git/jekyll-modele` qui représente la *repo* que nous avons précédemment clonée. Finalement, on change ici l'origine de la *repo* clonée pour qu'elle est comme nouvel origine la *repo* créée - **toujours en substituant username**. 
