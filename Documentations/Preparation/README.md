@@ -56,7 +56,6 @@ Les répertoires et fichiers présentés ci-bas ne représentent pas l'organisat
 |
 ├── README.md
 ├── CNAME
-├── jekyll-modele.gemspec
 └── _config.yml
 
 ```
@@ -82,6 +81,7 @@ Les répertoires et fichiers présentés ci-bas ne représentent pas l'organisat
 ├── Gemfile.lock
 ├── package.json
 ├── requirements.txt
+├── jekyll-modele.gemspec
 └── webpack.config.js
 ```
 
