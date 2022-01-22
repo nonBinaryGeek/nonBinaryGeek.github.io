@@ -266,7 +266,7 @@ Une fois que notre *repo* est créée, on peut simplement se diriger dans le ré
 git remote set-url origin https://github.com/<username>/<username>.github.io
 ```
 
-Par exemple, si on reprend l'exemple de l'utilisateur GitHub **johndoe**:
+Si nous reprennons l'exemple de l'utilisateur GitHub **johndoe**:
 
 ```sh
 cd ~/git/jekyll-modele
@@ -294,7 +294,7 @@ git clone https://github.com/<username>/<username>.github.io
 
 
 
-### Visualisation du siteweb
+### Visualisation du site web
 
 Afin de prévisualiser notre site web, on se dirige dans le répertoire associé à notre nouveau site -i.e `~/git/jekyll-modele` si on à simplement changer son origine, ou `~/git/<username>.github.io` si nous avons cloner notre propre repo.
 
@@ -368,7 +368,7 @@ Le résultat ressemblera alors au suivant:
   Server running... press ctrl-c to stop.
 ```
 
-On pourra alors accéder au siteweb via un browser en tappant l'adresse IP combinée au port `http://192.168.99.135:4001`.
+On pourra alors accéder au site web via un *browser* en tappant l'adresse IP combinée au port `http://192.168.99.135:4001`.
 
 ## Publication du site
 
@@ -389,4 +389,4 @@ git commit .
 git push
 ```
 
-Notre site web sera alors disponible avec nos modifications en se dirigeant vers https://< username >.github.io
+Notre site web sera alors disponible avec nos modifications en se dirigeant vers `https://<username>.github.io`
